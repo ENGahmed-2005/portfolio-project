@@ -83,6 +83,24 @@ const projectThumbSizes: Record<ProjectSlug, [string, string]> = {
   rukza: ["(max-width: 620px) 78vw, (max-width: 900px) 60vw, 397px", "(max-width: 620px) 24vw, (max-width: 900px) 22vw, 121px"],
 };
 
+
+function ProfileSummary({ lang }: { lang: Language }) {
+  const c = copy[lang];
+  return <section className="profile-summary" aria-labelledby="profile-summary-title">
+    <div className="wrap profile-summary-grid">
+      <div>
+        <p className="overline rule-label">{c.profileKicker}</p>
+        <h2 id="profile-summary-title">{c.profileTitle}</h2>
+        <p className="profile-summary-text">{c.profileSummary}</p>
+      </div>
+      <div className="services" aria-labelledby="services-title">
+        <h3 id="services-title">{c.servicesTitle}</h3>
+        <dl>{c.services.map(([name, detail]) => <div key={name}><dt>{name}</dt><dd>{detail}</dd></div>)}</dl>
+      </div>
+    </div>
+  </section>;
+}
+
 function ProjectVisual({ slug, eager = false }: { slug: ProjectSlug; eager?: boolean }) {
   const { images, size } = projects[slug];
   return <div aria-hidden="true" className={"project-art art-" + slug}>
@@ -159,7 +177,7 @@ function Contact({ lang }: { lang: Language }) {
 }
 
 export function Home({ lang }: { lang: Language }) {
-  return <><Header lang={lang} /><main id="content" tabIndex={-1}><Hero lang={lang} /><Work lang={lang} /><About lang={lang} /><Contact lang={lang} /></main><Footer lang={lang} /><JsonLd lang={lang} /></>;
+  return <><Header lang={lang} /><main id="content" tabIndex={-1}><Hero lang={lang} /><ProfileSummary lang={lang} /><Work lang={lang} /><About lang={lang} /><Contact lang={lang} /></main><Footer lang={lang} /><JsonLd lang={lang} /></>;
 }
 
 export function CaseStudy({ lang, slug }: { lang: Language; slug: ProjectSlug }) {
@@ -175,6 +193,10 @@ export function CaseStudy({ lang, slug }: { lang: Language; slug: ProjectSlug })
         <dl className="specs"><div><dt>{c.roleLabel}</dt><dd>{p.role}</dd></div><div><dt>{c.techLabel}</dt><dd><bdi>{project.tools.join(" · ")}</bdi></dd></div></dl>
       </section>
       <ProjectVisual slug={slug} eager />
+      <section className="project-facts" aria-labelledby="project-facts-title">
+        <h2 id="project-facts-title">{lang === "en" ? "Project facts" : "حقائق المشروع"}</h2>
+        <dl>{p.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      </section>
       <div className="case-notes">
         <section><h2>{c.context}</h2><p>{p.brief}</p></section><section><h2>{c.decision}</h2><p>{p.decision}</p></section>
       </div>

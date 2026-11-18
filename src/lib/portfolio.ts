@@ -31,6 +31,10 @@ export const copy = {
     skip: "Skip to content", nav: "Main navigation", work: "Work", about: "About", contact: "Contact",
     switchLabel: "عرض هذه الصفحة بالعربية", heroOne: "Ahmed", heroTwo: "Kahlout.",
     intro: "I build Arabic and English interfaces with React and Next.js, with a focus on responsive dashboards, landing pages, and clear product experiences. From Gaza, I lead frontend work on MenuPilot and design for the way people read and navigate on a phone.",
+    profileKicker: "Profile snapshot", profileTitle: "Frontend development for bilingual products.",
+    profileSummary: "Ahmed Kahlout is a React and Next.js frontend developer from Palestine who builds responsive dashboards, landing pages, and Arabic/English interfaces. His work includes restaurant operations, education, and study productivity products.",
+    servicesTitle: "What I do",
+    services: [["React & Next.js", "Responsive product interfaces"], ["Dashboards", "Clear data and workflow screens"], ["Landing pages", "Focused, mobile-first marketing pages"], ["Arabic / English UI", "RTL-aware bilingual experiences"]],
     cv: "Download CV", cvDetail: "English PDF",
     workKicker: "Project index", workTitle: "Selected work", all: "All projects",
     filters: ["Web apps", "Education", "Productivity"], filterLabel: "Filter projects by field",
@@ -52,6 +56,10 @@ export const copy = {
     skip: "انتقل إلى المحتوى", nav: "التنقل الرئيسي", work: "أعمالي", about: "عنّي", contact: "تواصل",
     switchLabel: "Read this page in English", heroOne: "أحمد", heroTwo: "الكحلوت.",
     intro: "أبني واجهات ويب بالعربية والإنجليزية باستخدام React وNext.js، مع تركيز على لوحات التحكم وصفحات الهبوط وتجارب المنتجات المتجاوبة. من غزة أقود تطوير واجهات MenuPilot، وأهتم بأن تبقى القراءة والتنقّل واضحَين على الهاتف.",
+    profileKicker: "نبذة مهنية", profileTitle: "تطوير واجهات لمنتجات ثنائية اللغة.",
+    profileSummary: "أحمد الكحلوت مطوّر واجهات أمامية من فلسطين متخصص في React وNext.js، ويبني لوحات تحكم وصفحات هبوط وواجهات عربية وإنجليزية متجاوبة. تشمل أعماله منتجات للمطاعم والتعليم وأدوات الدراسة والإنتاجية.",
+    servicesTitle: "ما الذي أعمل عليه؟",
+    services: [["React وNext.js", "واجهات منتجات متجاوبة"], ["لوحات التحكم", "شاشات واضحة للبيانات وسير العمل"], ["صفحات الهبوط", "صفحات تسويقية مركزة ومهيأة للهاتف"], ["واجهات عربية وإنجليزية", "تجارب ثنائية اللغة تراعي RTL"]],
     cv: "تنزيل السيرة الذاتية", cvDetail: "PDF بالإنجليزية",
     workKicker: "فهرس المشاريع", workTitle: "أعمال مختارة", all: "كل المشاريع",
     filters: ["تطبيقات الويب", "التعليم", "الإنتاجية"], filterLabel: "تصفية المشاريع حسب المجال",
@@ -77,6 +85,7 @@ interface ProjectText {
   role: string;
   brief: string;
   decision: string;
+  facts: [string, string][];
   alt: [string, string];
   caption: [string, string];
 }
@@ -99,6 +108,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "Frontend team lead",
       brief: "A guest at a table needs to browse and order from a phone. The staff looking after that table need a wider view of the restaurant. I lead frontend work across these two sides of MenuPilot.",
       decision: "The guest menu puts categories, prices and ordering controls together on a narrow screen. The staff dashboard uses a persistent right-hand navigation and groups order information so the team can scan it quickly.",
+      facts: [["Project type", "Restaurant web application"], ["My role", "Frontend team lead"], ["Frontend", "React"], ["Focus", "QR menu, ordering flow, staff dashboard, RTL interfaces"]],
       alt: ["Arabic restaurant dashboard with order cards and right-hand navigation", "Mobile restaurant menu showing dishes, prices and category tabs"],
       caption: ["The staff dashboard brings restaurant activity into one view.", "The guest menu is designed to be opened at the table."],
     },
@@ -108,6 +118,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "قائد فريق الواجهات الأمامية",
       brief: "يحتاج الضيف إلى تصفّح القائمة والطلب من هاتفه، ويحتاج الطاقم إلى متابعة ما يجري في المطعم. أقود تطوير الواجهات التي تربط هاتين التجربتين في MenuPilot.",
       decision: "تجمع قائمة الضيف الأصناف والأسعار وأدوات الطلب في مساحة تناسب الهاتف. وفي لوحة الموظفين وضعنا التنقّل على اليمين وجمعنا معلومات الطلبات في بطاقات يسهل مسحها بصريًا.",
+      facts: [["نوع المشروع", "تطبيق ويب للمطاعم"], ["دوري", "قائد فريق الواجهات الأمامية"], ["الواجهة الأمامية", "React"], ["التركيز", "قائمة QR، تدفق الطلب، لوحة الموظفين، وواجهات RTL"]],
       alt: ["لوحة مطعم بالعربية تحتوي على بطاقات الطلبات وقائمة تنقّل يمينية", "قائمة مطعم على الهاتف تعرض الأطباق والأسعار وتبويبات الأصناف"],
       caption: ["تجمع لوحة الموظفين نشاط المطعم في شاشة واحدة.", "يفتح الضيف القائمة من هاتفه على الطاولة."],
     },
@@ -121,6 +132,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "Product and interface development",
       brief: "Khotwa explores how an education specialist can go from an Arabic or mathematics assessment to an individual learning plan, then return to see progress. The prototype uses sample data.",
       decision: "The Arabic entry screens introduce the assessment and follow-up flow on a phone. Short labels and wide tap targets keep the steps readable as the specialist moves between tasks.",
+      facts: [["Project type", "Educational app prototype"], ["My role", "Product and interface development"], ["Technology", "Flutter and Dart"], ["Focus", "Academic assessment, individual support planning, Arabic mobile workflows"]],
       alt: ["Arabic Khotwa welcome screen introducing learning assessment on a phone", "Arabic sign-in screen in the Khotwa educational prototype"],
       caption: ["The welcome screen introduces the Arabic assessment workflow.", "The prototype’s sign-in screen keeps the form in a single column."],
     },
@@ -130,6 +142,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "تطوير المنتج والواجهات",
       brief: "يستكشف «خطوة» كيف ينتقل الأخصائي من تقييم الطالب في اللغة العربية أو الرياضيات إلى إعداد خطة تعليمية فردية ثم مراجعة التقدّم. يستخدم النموذج بيانات تجريبية.",
       decision: "تعرّف شاشات الدخول الأخصائي بمسار التقييم والمتابعة من الهاتف. استخدمت عبارات قصيرة ومساحات لمس واسعة حتى تبقى الخطوات واضحة عند الانتقال بين المهام.",
+      facts: [["نوع المشروع", "نموذج أولي لتطبيق تعليمي"], ["دوري", "تطوير المنتج والواجهات"], ["التقنية", "Flutter وDart"], ["التركيز", "التقييم الأكاديمي، خطط الدعم الفردية، وتدفقات عربية للهاتف"]],
       alt: ["شاشة الترحيب العربية في خطوة وتعرض مدخلًا إلى تقييم التعلّم", "شاشة تسجيل الدخول بالعربية في نموذج خطوة التعليمي"],
       caption: ["تعرّف شاشة الترحيب الأخصائي بمسار التقييم بالعربية.", "يجمع نموذج تسجيل الدخول حقوله في عمود واحد على الهاتف."],
     },
@@ -143,6 +156,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "Product and frontend development",
       brief: "A student can begin with a clear goal and still get distracted. Rukza explores how a study workspace and a Chrome extension can help someone set up a session and find their way back to it.",
       decision: "The study workspace puts the session controls and next action in view. A separate popup design explores how to guide someone back to their task after an interruption.",
+      facts: [["Project type", "Study productivity tool"], ["My role", "Product and frontend development"], ["Technology", "React and TypeScript"], ["Focus", "Focus sessions, bilingual study workspace, Chrome extension"]],
       alt: ["Arabic Rukza study workspace with session controls on a dark background", "English interface prototype for the Rukza browser popup"],
       caption: ["The Arabic study workspace in dark mode.", "A design simulation of the browser popup."],
     },
@@ -152,6 +166,7 @@ export const projects: Record<ProjectSlug, Project> = {
       role: "تطوير المنتج والواجهات الأمامية",
       brief: "قد يبدأ الطالب بهدف واضح ثم يتشتّت أثناء الدراسة. يستكشف «رُكزة» كيف تساعده مساحة دراسة وإضافة لمتصفح Chrome على إعداد جلسته والرجوع إليها بعد الانقطاع.",
       decision: "تجمع مساحة الدراسة أدوات الجلسة والخطوة التالية في مكان واحد. وفي تصميم منفصل للنافذة المصغّرة، جرّبت كيفية إرشاد الطالب للعودة إلى مهمته بعد التشتّت.",
+      facts: [["نوع المشروع", "أداة دراسة وإنتاجية"], ["دوري", "تطوير المنتج والواجهات الأمامية"], ["التقنية", "React وTypeScript"], ["التركيز", "جلسات التركيز، مساحة دراسة ثنائية اللغة، وإضافة Chrome"]],
       alt: ["مساحة الدراسة العربية في رُكزة مع أدوات الجلسة على خلفية داكنة", "نموذج بالإنجليزية لتصميم نافذة إضافة رُكزة في المتصفح"],
       caption: ["مساحة الدراسة العربية مع تفعيل المظهر الداكن.", "محاكاة تصميمية للنافذة المصغّرة في المتصفح."],
     },

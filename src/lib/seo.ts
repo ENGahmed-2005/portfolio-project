@@ -189,6 +189,7 @@ export function structuredData(lang: Language, slug?: PageSlug) {
           inLanguage: lang,
           contributor: person,
           keywords: projects[slug].tools.join(", "),
+          about: p.facts.map(([name, value]) => ({ "@type": "Thing", name, description: value })),
           image: projects[slug].images.map((file) => absolute("/media/" + file)),
         },
       },

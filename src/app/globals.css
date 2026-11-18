@@ -91,6 +91,20 @@ main:focus { outline: none; }
 .portrait figcaption > span:first-child { gap: 5px; }
 .signature { font: 700 .83rem/1 var(--mono); letter-spacing: .02em; color: #a6c5dd; }
 
+
+.profile-summary { border-top: 1px solid var(--line); background: #0a1422; }
+.profile-summary-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(32px, 7vw, 100px); padding-block: clamp(42px, 5.2vw, 72px); align-items: start; }
+.profile-summary h2 { margin: 12px 0 16px; max-width: 14ch; font-size: clamp(2.1rem, 3.6vw, 3.7rem); }
+.profile-summary-text { max-width: 66ch; color: var(--muted); line-height: 1.75; }
+.services h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.services dl > div, .project-facts dl > div { display: grid; grid-template-columns: minmax(120px,.85fr) minmax(0,1.4fr); gap: 14px; border-top: 1px solid var(--line); padding: 10px 0; }
+.services dt, .project-facts dt { font-weight: 700; }
+.services dd, .project-facts dd { color: var(--muted); }
+.project-facts { margin: clamp(28px, 4vw, 52px) 0 0; padding: 22px 0; border-block: 1px solid var(--line); }
+.project-facts h2 { font-size: 1.2rem; letter-spacing: -.02em; margin-bottom: 10px; }
+.project-facts dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: clamp(24px,4vw,60px); }
+[dir=rtl] .profile-summary h2, [dir=rtl] .project-facts h2 { letter-spacing: 0; }
+
 .work-section { border-block: 1px solid var(--line); background: #0b1626; padding-block: clamp(48px, 5.3vw, 80px); }
 .rule-label::before { content: ""; width: 27px; height: 2px; background: var(--accent); }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin: 10px 0 clamp(24px, 3vw, 42px); }
@@ -193,6 +207,7 @@ dt { font-weight: 650; } .milestones dd { color: var(--muted); }
   .filters { margin-inline-start: -3px; }
   .hero h1 { font-size: clamp(3.9rem, 8.2vw, 4.8rem); }
   .contact-grid { grid-template-columns: 1fr; gap: 18px; }.email { justify-self: start; }
+  .profile-summary-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 640px) {
   .wrap { width: calc(100% - 36px); }
@@ -210,6 +225,8 @@ dt { font-weight: 650; } .milestones dd { color: var(--muted); }
   .card-copy, .card-menupilot .card-copy { padding: 20px; }
   .project-cta { padding-top: 16px; }.project-art { aspect-ratio: 1.95; }
   .about { grid-template-columns: 1fr; gap: 28px; }.about-copy h2 { max-width: none; }
+  .profile-summary h2 { max-width: none; }
+  .project-facts dl { grid-template-columns: 1fr; }
   .footer { gap: 5px 14px; }.footer > span { flex-basis: 100%; }
   .case-intro { grid-template-columns: 1fr; gap: 20px; margin: 20px 0; }.case-intro h1 { font-size: 3.3rem; }
   .specs { grid-template-columns: 1fr 1fr; }.case-page > .project-art { aspect-ratio: 1.65; }
