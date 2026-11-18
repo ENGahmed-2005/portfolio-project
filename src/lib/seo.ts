@@ -123,7 +123,7 @@ export function structuredData(lang: Language, slug?: PageSlug) {
     "@type": "Person",
     "@id": absolute("/#person"),
     name: c.name,
-    alternateName: ["Ahmed Kahlout", "Ahmed Alkahlout", "أحمد الكحلوت"],
+    alternateName: ["Ahmed Kahlout", "Ahmed Al-Kahlout", "Ahmed Alkahlout", "Eng. Ahmed Kahlout", "ENG Ahmed Kahlout", "أحمد الكحلوت"],
     url: home,
     jobTitle: c.role,
     description: c.description,
@@ -131,6 +131,20 @@ export function structuredData(lang: Language, slug?: PageSlug) {
     image: absolute("/media/ahmed.webp"),
     knowsAbout: ["React", "Next.js", "TypeScript", "JavaScript", "Frontend Development", "Responsive Web Design", "Dashboards", "Landing Pages", "RTL Interfaces"],
     knowsLanguage: ["Arabic", "English"],
+    affiliation: {
+      "@type": "Organization",
+      name: "TAQAT",
+      url: "https://www.taqat-gaza.com/",
+    },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Frontend Developer",
+      skills: "React, Next.js, TypeScript, JavaScript, responsive dashboards, landing pages, bilingual Arabic/English interfaces, RTL UI",
+      occupationLocation: {
+        "@type": "Country",
+        name: "Palestine",
+      },
+    },
   };
 
   if (!slug) {
