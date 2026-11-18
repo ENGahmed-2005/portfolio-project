@@ -20,6 +20,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: radial-gradient(ellipse 60rem 36rem at 76% 0%,#152c4566,transparent),var(--bg); color: var(--text); font: 1rem/1.55 var(--sans); }
 ::selection { background: #39798c; color: #fff; }
 :lang(ar) { font-family: "Plex Arabic", "Segoe UI", Tahoma, sans-serif; }
+html[lang=en] .language[lang=ar] { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
 html[dir=rtl] body { font-family: "Plex Arabic", "Segoe UI", Tahoma, sans-serif; }
 figure, ul, dl, dd, h1, h2, h3, p, fieldset { margin: 0; }
 a { color: inherit; text-decoration: none; }
