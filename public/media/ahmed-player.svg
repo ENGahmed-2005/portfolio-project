@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 100" fill="none">
+  <defs>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#326087"/><stop offset=".55" stop-color="#183953"/><stop offset="1" stop-color="#10263d"/></linearGradient>
+    <linearGradient id="skin"><stop stop-color="#b97d55"/><stop offset=".53" stop-color="#dda47c"/><stop offset="1" stop-color="#bd835e"/></linearGradient>
+    <linearGradient id="hair" x2=".8" y2="1"><stop stop-color="#30313a"/><stop offset=".55" stop-color="#181a21"/><stop offset="1" stop-color="#0e141d"/></linearGradient>
+  </defs>
+  <g stroke="#101b28" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m27 78 2 15 10 1 2-13 2 13 10-1 1-16z" fill="#253246" stroke-width="2"/>
+    <path d="m29 91-4 3q-1 3 3 3h12v-5zm14 1v5h13q3-1 0-4l-4-2z" fill="#151e2b" stroke-width="1.8"/>
+    <path d="M26 96h13m5 0h12" stroke="#aab9ca" stroke-width="1.7"/>
+    <path d="m26 59-5 3-5 13 5 4 6-9m25-11 6 3 6 12-5 5-7-9" fill="url(#shirt)" stroke-width="2"/>
+    <path d="m17 74-2 5q-1 5 3 5 3 0 5-8m35 1q2 7 5 7 4-1 2-5l-3-5" fill="url(#skin)" stroke-width="1.6"/>
+    <path d="m29 58 7-3h9l8 4 3 19q-12 6-30 0z" fill="url(#shirt)" stroke-width="2.1"/>
+    <path d="m34 55 1-7h11l1 8-6 7z" fill="#af7452" stroke-width="1.2"/>
+    <path d="m33 55 7 7-5 4-6-7zm14 0-6 7 5 4 6-7z" fill="#274c6b" stroke-width="1.2"/>
+    <path d="m40 62 1 17m7-11h5m-25 6 4 2" stroke="#476483" stroke-width="1"/>
+    <g fill="#a0b6c5" stroke="none"><circle cx="40.7" cy="68" r=".85"/><circle cx="41" cy="74" r=".85"/></g>
+  </g>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M21 30q-5-2-4 5t6 8m35-13q6-3 5 4t-7 9" fill="#bd835f" stroke="#593c33" stroke-width="1.4"/>
+    <path d="M21 22q1-14 19-15 19 0 20 15l-2 18q-1 8-12 15-6 4-12 0-11-6-12-16z" fill="url(#skin)" stroke="#352c2c" stroke-width="1.8"/>
+    <path d="M22 32q0 12 7 17l8 5-3-1q-12-6-12-15zm35-1q0 13-8 19l-5 4q10-4 13-15z" fill="#a57558"/>
+    <path d="m21 34-2-6q-2-4 0-8-3-5 1-8-1-4 4-5 0-4 5-4 3-4 8-2 4-3 8 0 6-2 9 2 5-1 6 4 5 2 3 7 3 4-1 10l-4 9-1-15q-8-2-12-6-7 7-16 8l-4 5-1 9z" fill="url(#hair)" stroke="#101721" stroke-width="1.8"/>
+    <g stroke="#44454b" stroke-width="1.3"><path d="M22 15q2-6 8-7m-1 7q4-6 10-7m-2 6q5-2 7-6m4-1q4 1 7 5m-33 7 5-4"/></g>
+    <g stroke="#382d2c" stroke-width="2.4"><path d="M26 29q5-3 10 0m8-1q6-3 11 0"/></g>
+    <g fill="#f0d4ba" stroke="#523d34" stroke-width=".9"><path d="M26 33q4-5 10 0-5 3-10 0zm18-1q5-4 11 0-5 4-11 0z"/></g>
+    <g fill="#342d2b"><circle cx="31.3" cy="32.3" r="1.8"/><circle cx="49.6" cy="31.9" r="1.8"/></g>
+    <g fill="#fff0d5"><circle cx="31.8" cy="31.7" r=".55"/><circle cx="50.1" cy="31.3" r=".55"/></g>
+    <path d="m40 33-2 7q2 2 5 0" stroke="#a57255" stroke-width="1.2"/>
+    <path d="M22.5 38q2 8 8 12 6 4 10 4 5 0 11-5l6-10q-1 9-10 15-6 4-12 1-11-6-12.5-17z" fill="#483b34" opacity=".83"/>
+    <path d="M33 44q4-2 7-1 4-1 8 1m-12 2q5 2 9-.5" stroke="#795046" stroke-width="1.4"/>
+    <path d="M36 51q4 2 8-.2" stroke="#705344" stroke-width="1.1"/>
+  </g>
+</svg>
