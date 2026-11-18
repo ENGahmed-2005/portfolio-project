@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cvPath, pagePath, type Language } from "@/lib/portfolio";
 import { sections, walkCopy } from "@/lib/sections";
 import { Header, Footer, Icon, JsonLd } from "./Portfolio";
@@ -92,7 +93,7 @@ function Experience({ lang }: { lang: Language }) {
       </li>)}</ol>
     </section>
     <aside className="cv-sheet">
-      <img src="/media/ahmed.webp" alt={lang === "ar" ? "أحمد الكحلوت" : "Ahmed Kahlout"} width="720" height="720" />
+      <Image src="/media/ahmed.webp" alt={lang === "ar" ? "أحمد الكحلوت" : "Ahmed Kahlout"} width={720} height={720} sizes="210px" quality={80} />
       <a href={cvPath} download className="button"><Icon name="download" />{t.cv}</a><small>{t.pdf}</small>
     </aside>
   </div>;

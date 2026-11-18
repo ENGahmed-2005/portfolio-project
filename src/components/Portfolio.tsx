@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { copy, cvPath, email, otherLanguage, pagePath, profiles, projects, projectSlugs, type Language, type PageSlug, type ProjectSlug } from "@/lib/portfolio";
 import { structuredData } from "@/lib/seo";
 import { sections, walkCopy } from "@/lib/sections";
@@ -69,18 +70,32 @@ function Hero({ lang }: { lang: Language }) {
     <figure className="portrait">
       <div className="portrait-mat">
         <span className="guide guide-a" aria-hidden="true" /><span className="guide guide-b" aria-hidden="true" />
-        <div className="portrait-print"><img src="/media/ahmed.webp" width="720" height="720" alt={c.name} fetchPriority="high" /></div>
+        <div className="portrait-print"><Image src="/media/ahmed.webp" width={720} height={720} alt={c.name} priority sizes="(max-width: 620px) 50vw, (max-width: 900px) 38vw, 293px" quality={82} /></div>
       </div>
       <figcaption><span><Icon name="pin" />{c.place}</span><span className="signature" lang="en" dir="ltr" aria-hidden="true">A. Kahlout</span></figcaption>
     </figure>
   </section>;
 }
 
+const projectThumbSizes: Record<ProjectSlug, [string, string]> = {
+  menupilot: ["(max-width: 620px) 78vw, (max-width: 900px) 68vw, 500px", "(max-width: 620px) 22vw, (max-width: 900px) 20vw, 139px"],
+  khotwa: ["(max-width: 620px) 34vw, (max-width: 900px) 32vw, 171px", "(max-width: 620px) 34vw, (max-width: 900px) 32vw, 171px"],
+  rukza: ["(max-width: 620px) 78vw, (max-width: 900px) 60vw, 397px", "(max-width: 620px) 24vw, (max-width: 900px) 22vw, 121px"],
+};
+
 function ProjectVisual({ slug, eager = false }: { slug: ProjectSlug; eager?: boolean }) {
   const { images, size } = projects[slug];
   return <div aria-hidden="true" className={"project-art art-" + slug}>
     {images.map((file, i) => <div key={file} className={"screen screen-" + i}>
-      <img src={"/media/" + file} alt="" width={size[i][0]} height={size[i][1]} loading={eager ? "eager" : "lazy"} />
+      <Image
+        src={"/media/" + file}
+        alt=""
+        width={size[i][0]}
+        height={size[i][1]}
+        sizes={eager ? "(max-width: 700px) 92vw, 1000px" : projectThumbSizes[slug][i]}
+        quality={80}
+        priority={eager && i === 0}
+      />
     </div>)}
   </div>;
 }
@@ -165,7 +180,7 @@ export function CaseStudy({ lang, slug }: { lang: Language; slug: ProjectSlug })
       </div>
       <section className={"gallery gallery-" + slug} aria-labelledby="gallery-title">
         <h2 id="gallery-title">{c.screens}</h2><div>{project.images.map((file, i) => <figure key={file}>
-          <a href={"/media/" + file} aria-label={c.imageOpen + " · " + p.alt[i]}><img src={"/media/" + file} width={project.size[i][0]} height={project.size[i][1]} alt={p.alt[i]} loading="lazy" /><span><Icon name="external" /></span></a>
+          <a href={"/media/" + file} aria-label={c.imageOpen + " · " + p.alt[i]}><Image src={"/media/" + file} width={project.size[i][0]} height={project.size[i][1]} alt={p.alt[i]} sizes="(max-width: 700px) 92vw, 46vw" quality={82} /><span><Icon name="external" /></span></a>
           <figcaption>{p.caption[i]}</figcaption>
         </figure>)}</div>
       </section>
